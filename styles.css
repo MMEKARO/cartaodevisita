@@ -1,0 +1,173 @@
+/* styles.css */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #0e0e0e; /* Fundo escuro */
+  animation: gradient-animation 15s infinite alternate;
+}
+
+/* Animação de gradiente de fundo */
+@keyframes gradient-animation {
+  0% { background-color: #0e0e0e; }
+  100% { background-color: #1f1f1f; }
+}
+
+/* Container central */
+.container {
+  background-color: #1a1a1a; /* Fundo escuro para o cartão */
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); /* Sombra mais suave */
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  padding: 30px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-in 1.2s ease forwards;
+}
+
+/* Animação de fade-in para o container */
+@keyframes fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilização do perfil com imagem circular */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 5px solid #007bff; /* Cor da borda */
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-img:hover {
+  transform: rotate(360deg);
+}
+
+h1 {
+  font-size: 24px;
+  color: #fff; /* Cor do texto em branco */
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 16px;
+  color: #ccc; /* Cor do texto em cinza claro */
+  margin-bottom: 20px;
+}
+
+/* Carrossel de linguagens de programação */
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.carousel-track {
+  display: flex;
+  animation: slide 10s linear infinite;
+}
+
+.carousel img {
+  width: 60px; /* Largura padrão */
+  height: auto; /* Mantém a proporção */
+  margin: 0 10px;
+  object-fit: contain; /* Mantém a proporção */
+  transition: transform 0.3s ease;
+}
+
+.carousel img:hover {
+  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Animação do carrossel */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Botões de Ícones de Redes Sociais */
+.links {
+  display: flex;
+  justify-content: center; /* Centraliza os ícones */
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: transparent; /* Fundo transparente */
+  color: #fff; /* Cor do ícone em branco */
+  padding: 0; /* Sem padding */
+  border: none; /* Sem borda */
+  margin: 0 10px; /* Espaçamento uniforme entre os ícones */
+  cursor: pointer; /* Mão ao passar o mouse */
+  transition: transform 0.3s ease; /* Transição suave */
+}
+
+.btn img {
+  width: 40px; /* Ajuste a largura da imagem dos ícones */
+  height: auto; /* Mantém a proporção */
+}
+
+.btn:hover {
+  transform: scale(1.1); /* Aumenta o tamanho do botão ao passar o mouse */
+}
+
+/* Controle da música */
+.music-control {
+  margin-top: 30px;
+}
+
+.music-btn {
+  font-size: 24px;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: #25d366; /* Cor do botão */
+  color: white;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  border: none; /* Sem borda */
+}
+
+.music-btn:hover {
+  background-color: #128c7e; /* Cor ao passar o mouse */
+  transform: scale(1.2);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .carousel img {
+    width: 50px; /* Ajuste conforme desejado */
+  }
+}
